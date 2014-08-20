@@ -5,8 +5,7 @@ class VisitorFactory extends UserFactory{
 		
 		$dbms_obj= VisitorFactory::getDBMS($dbms);
 		$comm_obj= VisitorFactory::getCommunication($comm);
-		$visitor=new Visitor($dbms_obj,$comm_obj);
-
+		$visitor=Visitor::getInstance($dbms_obj,$comm_obj);
 		return $visitor;
 	}
 

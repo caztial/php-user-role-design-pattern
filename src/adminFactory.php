@@ -8,7 +8,7 @@ class AdminFactory extends UserFactory{
 	protected static function createUser($dbms=null,$comm=null){
 		$dbms_obj= AdminFactory::getDBMS($dbms);
 		$comm_obj= AdminFactory::getCommunication($comm);
-		$customer=new Admin(AdminFactory::$customer_obj,$dbms_obj,$comm_obj);
+		$customer=Admin::getInstance(AdminFactory::$customer_obj,$dbms_obj,$comm_obj);
 	
 		return $customer;
 	} 

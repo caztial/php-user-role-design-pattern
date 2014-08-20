@@ -2,12 +2,17 @@
 require_once('userRoles.php');
 
 class Customer extends UserRoles{
+	public static $uniqueInstance;
 	public $customer="Customer Obj";
-	public $communication=null;
-	public $dbms=null;
 
+	public static function getInstance(Visitor $visitor,Database $dbms, Communication $comm){
+		if(!is_object(Customer::$uniqueInstance)){
+			Customer::$uniqueInstance=new Customer($visitor,$dbms,$comm);
+		}
+		return Customer::$uniqueInstance;
+	}
 
-	public function Customer(Visitor $visitor,Database $dbms, Communication $comm){
+	private function Customer(Visitor $visitor,Database $dbms, Communication $comm){
 		// constructor
 		$this->setUser($visitor);
 		$this->setDbms($dbms);

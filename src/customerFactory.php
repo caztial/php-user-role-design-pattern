@@ -7,7 +7,7 @@ class CustomerFactory extends UserFactory{
 	protected static function createUser($dbms=null,$comm=null){
 		$dbms_obj= CustomerFactory::getDBMS($dbms);
 		$comm_obj= CustomerFactory::getCommunication($comm);
-		$customer=new Customer(CustomerFactory::$visitor_obj,$dbms_obj,$comm_obj);
+		$customer=Customer::getInstance(CustomerFactory::$visitor_obj,$dbms_obj,$comm_obj);
 	
 		return $customer;
 	} 

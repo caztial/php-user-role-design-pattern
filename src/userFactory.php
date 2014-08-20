@@ -7,7 +7,7 @@ abstract class UserFactory{
 		if(!is_null($dbms)){
 			switch ($dbms) {
 				case 'mysql':
-					$dbms_obj= new Mysql();
+					$dbms_obj= Mysql::getInstance();
 					break;
 				
 				default:
@@ -15,7 +15,7 @@ abstract class UserFactory{
 					break;
 			}
 		}else{
-			$dbms_obj= new Mysql();
+			$dbms_obj= Mysql::getInstance();
 		}
 		return $dbms_obj;
 	} 
@@ -24,7 +24,7 @@ abstract class UserFactory{
 		if(!is_null($comm)){
 			switch ($comm) {
 				case 'email':
-					$comm_obj= new Email();
+					$comm_obj= Email::getInstance();
 					break;
 				
 				default:
@@ -33,7 +33,7 @@ abstract class UserFactory{
 			}
 		}
 		else{
-			$comm_obj= new Email();
+			$comm_obj= Email::getInstance();
 		}
 		return $comm_obj;
 	}

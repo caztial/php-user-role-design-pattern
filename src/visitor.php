@@ -2,12 +2,19 @@
 require_once('users.php');
 
 class Visitor implements Users{
+	public static $uniqueInstance;
 	public $Visitor='Visitor Obj';
 	public $communication=null;
 	public $dbms=null;
 
+	public static function getInstance(Database $dbms, Communication $comm){
+		if(!is_object(Visitor::$uniqueInstance)){
+			Visitor::$uniqueInstance=new Visitor($dbms,$comm);
+		}
+		return Visitor::$uniqueInstance;
+	}
 
-	public function Visitor(Database $dbms, Communication $comm){
+	private function Visitor(Database $dbms, Communication $comm){
 		$this->setDbms($dbms);
 		$this->setCommunication($comm);
 	}

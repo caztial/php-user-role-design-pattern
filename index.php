@@ -9,7 +9,7 @@ foreach (glob("src/*.php") as $filename)
 
 $visitor=VisitorFactory::createVisitor();
 $customer= CustomerFactory::createCustomer();
-$user= AdminFactory::createAdmin();
+$admin= AdminFactory::createAdmin();
 
 echo "<pre>";
-var_dump($user);
+var_dump($admin);
