@@ -5,7 +5,7 @@ php-user-role-design-pattern
 
 
 
-You will need previous understanding about **Strategy**, **Decorator** and **Factory** design pattern to understand the design. 
+You will need previous understanding about **Strategy**, **Decorator**, **Singleton** and **Factory** design pattern to understand the design. 
 
 *I have added basic object creation in my index.php to get you started..*
 
