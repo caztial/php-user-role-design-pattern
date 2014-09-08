@@ -50,4 +50,4 @@ object(Admin)#5 (4) {
   }
 }
 ```
-Speical thanks to www.genmymodel.com it helped me to designed the class diagram.
+Speical thanks to www.genmymodel.com
